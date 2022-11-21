@@ -1,0 +1,150 @@
+/*
+ * CSC 210 Programming Assignment #4
+ * Author: Alysha Morgan
+ * Date: 04/25/22
+ *
+ * Header file: node.h
+ *
+ * This class specifies the variables and members
+ * to manipulate the letters and characters of a
+ * string or character.
+ */
+
+#ifndef NODE_H            // Header Guard
+#define NODE_H            // Header Guard
+
+#include <iostream>       // Allow C++ to read input and display output
+#include <cstdlib>        // Allow C++ to access general purpose functions
+#include <string>         // Allow C++ to store sequences of characters
+
+using namespace std;      // Use C++ standard library
+
+/***** node Class *****/
+class node
+{
+// Declare private data member variables
+private:
+    // Letter of the word
+    char letter;
+
+    // Boolean to represent if a blank (or underscore) or the letter is to be displayed
+    bool showBlank;
+
+    // Pointer to the next node in the linked list
+    node* next;
+
+// Declare the constructors and data member functions
+public:
+    // Default Constructor
+    // Description:   Initializes all pointers (pointing to private data members) to null values.
+    //
+    // Signature:     node default constructor returns no value.
+    //
+    // Parameters:    There are no parameters.
+    //
+    // Precondition:  There are no preconditions.
+    //
+    // Postcondition: All pointers have been initialized to null values.
+    //
+    // Return:        No value is returned.
+    node();
+
+    // Overloaded Constructor
+    // Description:   Initializes all private variables of the node class to this pointers.
+    //
+    // Signature:     node overloaded constructor returns no value; it takes
+    //                a character parameter, a boolean parameter,
+    //                and a node* parameter as input.
+    //
+    // Parameters:    The character variable contains a letter of a string.
+    //                The boolean variable contains a value of true or false.
+    //                The node variable points to the next or following node.
+    //
+    // Precondition:  All this pointers have been initialized in the default constructor.
+    //
+    // Postcondition: All variables are set to their respective this pointers.
+    //
+    // Return:        No value is returned.
+    node(char letter, bool showBlank, node* next);
+
+    // Description:   Member to set a letter/character.
+    //
+    // Signature:     setLetter returns no value; it takes a character parameter as input.
+    //
+    // Parameters:    The character variable contains a letter from a string.
+    //
+    // Precondition:  letter contains a valid character.
+    //
+    // Postcondition: Set pointer to letter character parameter.
+    //
+    // Return:        No value is returned.
+    void setLetter(char letter);
+
+    // Description:   Member to get a letter's number place in an array. Returns this letter pointer.
+    //
+    // Signature:     getLetter returns a pointer to a integer object.
+    //
+    // Parameters:    There are no parameters.
+    //
+    // Precondition:  There are no preconditions.
+    //
+    // Postcondition: A valid pointer is returned.
+    //
+    // Return:        Return this->letter.
+    int getLetter();
+
+    // Description:   Member to set a boolean (this will determine if a blank is shown on the screen).
+    //
+    // Signature:     setShowBlank returns no value; it takes a boolean parameter as input.
+    //
+    // Parameters:    The boolean variable contains a value of true or false.
+    //
+    // Precondition:  showBlank contains a valid boolean.
+    //
+    // Postcondition: Set pointer to showBlank boolean parameter.
+    //
+    // Return:        No value is returned.
+    void setShowBlank(bool showBlank);
+
+    // Description:   Member to get the current status of a blank. Returns this showBlank pointer.
+    //
+    // Signature:     getShowBlank returns a pointer to a boolean parameter.
+    //
+    // Parameters:    There are no parameters.
+    //
+    // Precondition:  There are no preconditions.
+    //
+    // Postcondition: A valid pointer is returned.
+    //
+    // Return:        Return this->showBlank.
+    bool getShowBlank();
+
+    // Description:   Member to set a pointer to its next node.
+    //
+    // Signature:     setNext returns no value; it takes a node* parameter as input.
+    //
+    // Parameters:    The node variable points to the next or following node.
+    //
+    // Precondition:  next is pointing towards a valid value.
+    //
+    // Postcondition: Set pointer to next node* parameter.
+    //
+    // Return:        No value is returned.
+    void setNext(node* next);
+
+    // Description:   Member to get the position of the node next to the pointer.
+    // Returns this next pointer.
+    //
+    // Signature:     getNext returns a pointer to its next node.
+    //
+    // Parameters:    There are no parameters.
+    //
+    // Precondition:  There are no preconditions.
+    //
+    // Postcondition: A valid pointer is returned.
+    //
+    // Return:        Return this->next.
+    node* getNext();
+};
+
+#endif // NODE_H
